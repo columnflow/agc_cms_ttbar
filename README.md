@@ -1,6 +1,22 @@
 # Analysis Grand Challenge with CMS OpenData using columnflow
 
-Description to be added here.
+### Installation
+
+```shell
+# clone
+git clone --recursive git@github.com:columnflow/agc_cms_ttbar.git
+cd agc_cms_ttbar
+
+# setup (using a distinct setup name)
+source setup.sh agc
+
+# create a grid proxy
+# if voms-proxy-init is not available to you, try /cvmfs/grid.cern.ch/centos7-umd4-ui-211021/usr/bin/voms-proxy-init
+# also, requesting a specific voms is optional
+voms-proxy-init -rfc -valid "196:00" [-voms cms]
+
+... to be continued
+```
 
 ### Resources
 
