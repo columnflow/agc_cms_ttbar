@@ -1,0 +1,5 @@
+# version 1
+
+-r ../modules/columnflow/sandboxes/columnar.txt
+
+xgboost~=1.7.6
