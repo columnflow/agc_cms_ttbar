@@ -15,7 +15,21 @@ source setup.sh agc
 # also, requesting a specific voms is optional
 voms-proxy-init -rfc -valid "196:00" [-voms cms]
 
-... to be continued
+# create datacards locally with 4 workers using
+#   - the limited config (just two input files per dataset)
+#   - a reduced statistical model (dropped shape uncertainties)
+law run cf.CreateDatacards \
+    --config cms_opendata_2015_agc_limited \
+    --inference-model ttbar_model_no_shapes \
+    --version dev1 \
+    --workers 4
+
+# show task status recursively (down to dependency depth 4)
+law run cf.CreateDatacards \
+    --config cms_opendata_2015_agc_limited \
+    --inference-model ttbar_model_no_shapes \
+    --version dev1 \
+    --print-status 4
 ```
 
 ### Resources
