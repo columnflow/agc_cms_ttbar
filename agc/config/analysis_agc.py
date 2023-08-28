@@ -219,19 +219,19 @@ def add_config(
     add_category(
         cfg,
         name="preselection",
-        selection="sel_pre",
+        selection="cat_pre",
         label="Pre-selection",
     )
     add_category(
         cfg,
         name="ge4j_eq1b",
-        selection="sel_ge4j_eq1b",
+        selection="cat_ge4j_eq1b",
         label=r"$\geq 4$ jets, $1$ b-tag",
     )
     add_category(
         cfg,
         name="ge4j_ge2b",
-        selection="sel_ge4j_ge2b",
+        selection="cat_ge4j_ge2b",
         label=r"$\geq 4$ jets, $\geq 2$ b-tags",
     )
 

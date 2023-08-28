@@ -211,7 +211,7 @@ def default(
             "values": events.process_id,
             "mask_fn": (lambda v: events.process_id == v),
         }
-    events = self[increment_stats](
+    events, results = self[increment_stats](
         events=events,
         results=results,
         stats=stats,
