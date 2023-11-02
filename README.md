@@ -30,6 +30,13 @@ law run cf.CreateDatacards \
     --inference-model ttbar_model_no_shapes \
     --version dev1 \
     --print-status 4
+
+# show the location of the created datacard
+law run cf.CreateDatacards \
+    --config cms_opendata_2015_agc_limited \
+    --inference-model ttbar_model_no_shapes \
+    --version dev1 \
+    --print-output 0
 ```
 
 ### Resources

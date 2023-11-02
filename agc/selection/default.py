@@ -193,19 +193,19 @@ def default(
     events = self[cutflow_features](events, results.objects, **kwargs)
 
     # combined event selection after all steps
-    results.main["event"] = reduce(and_, results.steps.values())
+    results.event = reduce(and_, results.steps.values())
 
     # increment stats
     weight_map = {
         "num_events": Ellipsis,
-        "num_events_selected": results.main.event,
+        "num_events_selected": results.event,
     }
     group_map = {}
     if self.dataset_inst.is_mc:
         # sum of mc weight for all events
         weight_map["sum_mc_weight"] = (events.mc_weight, Ellipsis)
         # sum of mc weight for selected events
-        weight_map["sum_mc_weight_selected"] = (events.mc_weight, results.main.event)
+        weight_map["sum_mc_weight_selected"] = (events.mc_weight, results.event)
         # store all weights per process id
         group_map["process"] = {
             "values": events.process_id,
