@@ -4,14 +4,12 @@
 Column production methods related to higher-level features.
 """
 
-
 from columnflow.production import Producer, producer
 from columnflow.production.categories import category_ids
 from columnflow.production.normalization import normalization_weights
 from columnflow.util import maybe_import
 
 from agc.production.features import features
-
 
 np = maybe_import("numpy")
 ak = maybe_import("awkward")

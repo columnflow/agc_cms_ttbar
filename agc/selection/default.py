@@ -18,7 +18,6 @@ from columnflow.util import maybe_import
 from agc.calibration.default import jec_shifts
 from agc.production.features import cutflow_features
 
-
 np = maybe_import("numpy")
 ak = maybe_import("awkward")
 
@@ -135,7 +134,7 @@ def event_selection(
     results.steps.btag = results.x.n_btags >= 1
 
     # combined event selection after all steps
-    results.main["event"] = results.steps.lepton & results.steps.jet & results.steps.btag
+    results.event = results.steps.lepton & results.steps.jet & results.steps.btag
 
     return events, results
 

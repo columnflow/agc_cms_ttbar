@@ -4,11 +4,11 @@
 ttbar inference model.
 """
 
-from columnflow.inference import inference_model, ParameterType
+from columnflow.inference import inference_model, InferenceModel, ParameterType
 
 
 @inference_model
-def ttbar_model(self):
+def ttbar_model(self: InferenceModel) -> None:
 
     #
     # categories
@@ -94,7 +94,7 @@ def ttbar_model(self):
 
 
 @inference_model
-def ttbar_model_no_shapes(self):
+def ttbar_model_no_shapes(self: InferenceModel) -> None:
     # same initialization as "ttbar_model" above
     ttbar_model.init_func.__get__(self, self.__class__)()
 

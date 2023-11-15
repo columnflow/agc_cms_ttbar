@@ -6,14 +6,12 @@ Definition of generic physics processes and constants.
 In a perfect world, a file like this would be provided centrally, even across collaborations.
 """
 
-
 __all__ = [
     "n_leps", "m_z", "br_w", "br_ww", "br_z", "br_h",
     "tt", "tt_sl", "tt_dl", "tt_fh",
     "st", "st_tchannel", "st_twchannel", "st_schannel",
     "w", "w_lnu",
 ]
-
 
 from scinum import Number, Correlation
 from order import Process

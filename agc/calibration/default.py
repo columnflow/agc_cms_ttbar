@@ -8,7 +8,6 @@ from columnflow.calibration import Calibrator, calibrator
 from columnflow.util import maybe_import
 from columnflow.columnar_util import set_ak_column, layout_ak_array
 
-
 np = maybe_import("numpy")
 ak = maybe_import("awkward")
 

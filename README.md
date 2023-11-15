@@ -14,10 +14,31 @@ source setup.sh agc
 # if voms-proxy-init is not available to you, try /cvmfs/grid.cern.ch/centos7-umd4-ui-211021/usr/bin/voms-proxy-init
 # also, requesting a specific voms is optional
 voms-proxy-init -rfc -valid "196:00" [-voms cms]
+```
 
-# create datacards locally with 4 workers using
+### Create plots
+
+```shell
+# create plots locally with
+#   - the limited config (just two input files per dataset)
+#   - 4 local processes
+# note: use "--view-cmd imgcat" only if available in your terminal for inline viewing
+law run cf.PlotVariables1D \
+    --config cms_opendata_2015_agc_limited \
+    --categories ge4j_eq1b \
+    --variables jet1_pt \
+    --version dev1 \
+    --view-cmd imgcat \
+    --workers 4
+```
+
+### Create datacards
+
+```shell
+# create datacards locally with
 #   - the limited config (just two input files per dataset)
 #   - a reduced statistical model (dropped shape uncertainties)
+#   - 4 local processes
 law run cf.CreateDatacards \
     --config cms_opendata_2015_agc_limited \
     --inference-model ttbar_model_no_shapes \
@@ -38,6 +59,8 @@ law run cf.CreateDatacards \
     --version dev1 \
     --print-output 0
 ```
+
+Notice the same `--version` parameter as used for the plots above to reuse **intermediate results**.
 
 ### Resources
 

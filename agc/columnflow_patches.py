@@ -14,7 +14,7 @@ logger = law.logger.get_logger(__name__)
 
 
 @memoize
-def patch_bundle_repo_exclude_files():
+def patch_bundle_repo_exclude_files() -> None:
     from columnflow.tasks.framework.remote import BundleRepo
 
     # get the relative path to CF_BASE
@@ -35,5 +35,5 @@ def patch_bundle_repo_exclude_files():
 
 
 @memoize
-def patch_all():
+def patch_all() -> None:
     patch_bundle_repo_exclude_files()

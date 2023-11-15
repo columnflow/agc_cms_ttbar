@@ -9,7 +9,6 @@ import os
 from columnflow.production import Producer, producer
 from columnflow.util import InsertableDict, maybe_import
 
-
 ak = maybe_import("awkward")
 
 
